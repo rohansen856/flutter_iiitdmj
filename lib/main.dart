@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:iiit/database/routine_database.dart';
 import 'package:iiit/pages/auth_page.dart';
 import 'package:iiit/pages/home_page.dart';
 import 'package:iiit/pages/splash_page.dart';
@@ -13,6 +14,7 @@ Future<void> main() async {
   await Hive.openBox('testBox');
 
   WidgetsFlutterBinding.ensureInitialized();
+  await RoutineDatabase.initialize();
 
   const String supabaseUrl = "https://yyivbsxjptvxhmxtrqug.supabase.co";
   const String supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5aXZic3hqcHR2eGhteHRycXVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ5NDgzMjAsImV4cCI6MjAyMDUyNDMyMH0.vnxZenLPuh9kXe2xcTYb4FMVCmTgKy7EcvE-CBexvP4";
@@ -24,7 +26,7 @@ Future<void> main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context)=>ThemeProvider(),
-    child: MyApp())
+    child: const MyApp())
   );
 }
 

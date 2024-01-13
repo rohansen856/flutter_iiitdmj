@@ -6,17 +6,11 @@ part 'routine_model.g.dart';
 
 @Collection()
 class Routine{
-  Id id = Isar.autoIncrement;
-  @ignore
-  late List<Classes> data;
-}
-
-class Classes{
+  late Id day;
   late String type;
   late String code;
-  late int start;
-  late int end;
   late String prof;
-
-  Classes(this.type, this.code, this.start, this.end, this.prof);
+  late int from;
+  late int to;
+  late int sem;
 }

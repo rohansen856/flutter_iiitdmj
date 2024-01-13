@@ -19,20 +19,6 @@ class RoutineData {
 class _RoutineBarState extends State<RoutineBar> {
   final _future = supabase.from('routine').select();
 
-  // List<RoutineData> classes = [
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  //   RoutineData("theory", "NS1001", "YSK"),
-  // ];
-
-
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
