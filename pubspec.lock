@@ -283,6 +283,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_mobx:
+    dependency: transitive
+    description:
+      name: flutter_mobx
+      sha256: "4a5d062ff85ed3759f4aac6410ff0ffae32e324b2e71ca722ae1b37b32e865f4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0+2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -349,6 +357,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  group_select:
+    dependency: "direct main"
+    description:
+      name: group_select
+      sha256: e138dd1147f3acf6e25ed7b83a69a5c6f6cc432f350b4c0464c0b3f334cb65d9
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.5.1"
   gtk:
     dependency: transitive
     description:
@@ -509,6 +525,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  mobx:
+    dependency: transitive
+    description:
+      name: mobx
+      sha256: "74ee54012dc7c1b3276eaa960a600a7418ef5f9997565deb8fca1fd88fb36b78"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0+1"
   nested:
     dependency: transitive
     description:

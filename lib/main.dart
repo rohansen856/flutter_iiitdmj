@@ -12,9 +12,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 Future<void> main() async {
   await Hive.initFlutter();
   await Hive.openBox('testBox');
-
   WidgetsFlutterBinding.ensureInitialized();
-  await RoutineDatabase.initialize();
 
   const String supabaseUrl = "https://yyivbsxjptvxhmxtrqug.supabase.co";
   const String supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5aXZic3hqcHR2eGhteHRycXVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ5NDgzMjAsImV4cCI6MjAyMDUyNDMyMH0.vnxZenLPuh9kXe2xcTYb4FMVCmTgKy7EcvE-CBexvP4";
@@ -30,14 +28,14 @@ Future<void> main() async {
   );
 }
 
+final supabase = Supabase.instance.client;
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
-
-final supabase = Supabase.instance.client;
 
 class _MyAppState extends State<MyApp> {
   @override

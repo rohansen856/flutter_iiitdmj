@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iiit/main.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:iiit/database/routine_database.dart';
 
 class RoutineBar extends StatefulWidget {
   const RoutineBar({super.key});
@@ -17,7 +18,24 @@ class RoutineData {
 }
 
 class _RoutineBarState extends State<RoutineBar> {
-  final _future = supabase.from('routine').select();
+  final routine = [];
+  final _mybox = Hive.box('testBox');
+  
+  Future<void> func() async{
+    print('object');
+    await RoutineDatabase().initDatabase();
+    final data = _mybox.get('routine');
+    setState(() {
+      routine.addAll(data);
+    });
+  }
+
+  @override
+  void initState() {
+    func();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,37 +44,28 @@ class _RoutineBarState extends State<RoutineBar> {
       child: Container(
           height: 90.0, // Set the desired height of your list
           color: Colors.blue,
-          child: FutureBuilder<List<Map<String, dynamic>>>(
-            future: _future,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return const Center(child: CircularProgressIndicator(color: Colors.white,));
-              }
-              final routine = snapshot.data!;
-              return ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: routine.length,
-                itemBuilder: ((context, index) {
-                  final classes = routine[index];
-                  return Container(
-                    height: 90.0,
-                    width: 150,
-                    color: Colors.amber,
-                    margin: index+1 != routine.length? const EdgeInsets.only(right: 5):const EdgeInsets.all(0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(classes['type']),
-                        Text(classes['code']),
-                        Text("${classes['from']} - ${classes['to']}"),
-                        Text(classes['prof']),
-                      ],
-                    ),
-                  );
-                }),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: routine.length,
+            itemBuilder: ((context, index) {
+              final classes = routine[index];
+              return Container(
+                height: 90.0,
+                width: 150,
+                color: Colors.amber,
+                margin: index+1 != routine.length? const EdgeInsets.only(right: 5):const EdgeInsets.all(0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(classes['type']),
+                    Text(classes['code']),
+                    Text("${classes['from']} - ${classes['to']}"),
+                    Text(classes['prof']),
+                  ],
+                ),
               );
-            },
-          ),
+            }),
+          )
         ),
     );
   }

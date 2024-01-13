@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iiit/components/bottom_bar.dart';
+import 'package:iiit/components/select_group.dart';
 import 'package:iiit/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -19,28 +20,34 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(toolbarHeight: 40),
       body: Padding(
         padding: const EdgeInsets.only(top: 15.0, right: 7.0, left: 7.0),
-        child: Container(
-          height: 70,
-          decoration: const BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                const Text("Theme"),
-                CupertinoSwitch(
-                  value: Provider.of<ThemeProvider>(context).isDarkMode,
-                  onChanged: (n){
-                    Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
-                  }
-                )
-              ],
+        child: Column(
+          children: [
+            Container(
+              height: 70,
+              decoration: const BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.all(Radius.circular(10))
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const Text("Theme"),
+                    CupertinoSwitch(
+                      value: Provider.of<ThemeProvider>(context).isDarkMode,
+                      onChanged: (n){
+                        Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                      }
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
+            
+                SelectGroup()
+          ],
         )
       ),
       bottomNavigationBar: const BottomBar(pageNo: 2,),
