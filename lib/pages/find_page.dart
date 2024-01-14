@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iiit/components/bottom_bar.dart';
-import 'package:iiit/components/search_bar.dart';
+import 'package:iiitdmj/components/bottom_bar.dart';
+import 'package:iiitdmj/components/search_bar.dart';
 
 class FindPage extends StatefulWidget {
   const FindPage({super.key});

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:iiit/database/routine_database.dart';
-import 'package:iiit/pages/auth_page.dart';
-import 'package:iiit/pages/home_page.dart';
-import 'package:iiit/pages/splash_page.dart';
-import 'package:iiit/themes/dark_mode.dart';
-import 'package:iiit/themes/theme_provider.dart';
+import 'package:iiitdmj/pages/auth_page.dart';
+import 'package:iiitdmj/pages/home_page.dart';
+import 'package:iiitdmj/pages/splash_page.dart';
+import 'package:iiitdmj/themes/dark_mode.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

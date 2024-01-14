@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:iiit/pages/find_page.dart';
-import 'package:iiit/pages/home_page.dart';
-import 'package:iiit/pages/settings_page.dart';
+import 'package:iiitdmj/pages/find_page.dart';
+import 'package:iiitdmj/pages/home_page.dart';
+import 'package:iiitdmj/pages/settings_page.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key, required this.pageNo});

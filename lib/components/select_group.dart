@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:group_select/group_select.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:iiit/database/settings_database.dart';
+import 'package:iiitdmj/database/settings_database.dart';
 
 class SelectGroup extends StatefulWidget {
   const SelectGroup({super.key});

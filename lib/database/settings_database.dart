@@ -14,4 +14,17 @@ class SettingsDatabase extends ChangeNotifier{
       print(mybox.get('settings.mess'));
     }
   }
+
+  int getData(name){
+    final mybox = Hive.box('testBox');
+    late int data = 0;
+    if(name == 'sem'){
+      data = mybox.get('settings.sem');
+    }
+    else if(name == 'mess'){
+      data = mybox.get('settings.mess');
+    }
+    print(data);
+    return data;
+  }
 }

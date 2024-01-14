@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iiit/components/bottom_bar.dart';
-import 'package:iiit/components/select_group.dart';
-import 'package:iiit/themes/theme_provider.dart';
+import 'package:iiitdmj/components/bottom_bar.dart';
+import 'package:iiitdmj/components/select_group.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {

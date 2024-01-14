@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:iiit/main.dart';
+import 'package:iiitdmj/main.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
