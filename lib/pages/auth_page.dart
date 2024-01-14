@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:gap/gap.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -102,9 +102,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const Gap(30),
                 TextField(
                   controller: _emailController,
                   textAlign: TextAlign.center,

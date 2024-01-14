@@ -19,12 +19,12 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
   Widget build(BuildContext context) {
     return DropdownButton<int>(
       value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
+      icon: const Icon(Icons.arrow_downward, color: Colors.white,),
       elevation: 16,
-      style: const TextStyle(color: Colors.deepPurple),
+      style: const TextStyle(color: Colors.white),
       underline: Container(
         height: 2,
-        color: Colors.deepPurpleAccent,
+        color: Colors.white,
       ),
       onChanged: (int? value) {
         // This is called when the user selects an item.

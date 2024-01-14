@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:iiitdmj/database/routine_database.dart';
 import 'package:iiitdmj/database/settings_database.dart';
+import 'package:iiitdmj/models/routine_model.dart';
 
 class RoutineBar extends StatefulWidget {
   const RoutineBar({super.key});
@@ -19,14 +20,13 @@ class RoutineData {
 }
 
 class _RoutineBarState extends State<RoutineBar> {
-  final routine = [];
+  final List<dynamic> routine = [];
   int sem=0;
   final _mybox = Hive.box('testBox');
   
   Future<void> func() async{
     sem = SettingsDatabase().getData('sem');
     _mybox.delete('routine');
-
     await RoutineDatabase().getRoutine(sem);
     final List<dynamic> data = _mybox.get('routine');
     data.sort((a, b) => a['from'].compareTo(b['from']));
@@ -39,7 +39,6 @@ class _RoutineBarState extends State<RoutineBar> {
   @override
   void initState() {
     func();
-
     super.initState();
   }
 

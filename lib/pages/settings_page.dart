@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:iiitdmj/components/bottom_bar.dart';
 import 'package:iiitdmj/components/dropdown_options.dart';
 import 'package:iiitdmj/themes/theme_provider.dart';
@@ -45,7 +46,25 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
             ),
-            const DropdownButtonExample()
+            const Gap(10),
+            Container(
+              height: 70,
+              decoration: const BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.all(Radius.circular(10))
+              ),
+              child: const Padding(
+                padding: EdgeInsets.only(left: 20.0, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text("Semester"),
+                    DropdownButtonExample()
+                  ],
+                ),
+              ),
+            ),
           ],
         )
       ),

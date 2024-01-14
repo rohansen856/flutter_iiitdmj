@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+import 'package:gap/gap.dart';
 import 'package:iiitdmj/components/bottom_bar.dart';
 import 'package:iiitdmj/components/mess.dart';
 import 'package:iiitdmj/components/routine.dart';
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Center(child: RoutineBar()),
-              SizedBox(height: 20),
+              Gap(20),
               Center(child: Mess(),)
             ],
           ),
