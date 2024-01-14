@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iiitdmj/components/bottom_bar.dart';
-import 'package:iiitdmj/components/select_group.dart';
+import 'package:iiitdmj/components/dropdown_options.dart';
 import 'package:iiitdmj/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -45,8 +45,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
             ),
-            
-                SelectGroup()
+            const DropdownButtonExample()
           ],
         )
       ),

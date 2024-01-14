@@ -28,9 +28,10 @@ class _RoutineBarState extends State<RoutineBar> {
     _mybox.delete('routine');
 
     await RoutineDatabase().getRoutine(sem);
-    final data = _mybox.get('routine');
+    final List<dynamic> data = _mybox.get('routine');
+    data.sort((a, b) => a['from'].compareTo(b['from']));
     setState(() {
-      routine.addAll(data??[]);
+      routine.addAll(data);
     });
 
   }
