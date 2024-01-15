@@ -23,11 +23,23 @@ class _DayPickerState extends State<DayPicker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 150,
       width: double.maxFinite,
       decoration: const BoxDecoration(
-      color: Colors.blue,
-        borderRadius: BorderRadius.all(Radius.circular(10))
+        color: Color(0xff8AAAE5),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xff8AAAE5),
+            spreadRadius: 4,
+            blurRadius: 10,
+          ),
+          BoxShadow(
+            color: Color(0xff8AAAE5),
+            spreadRadius: -4,
+            blurRadius: 5,
+          )
+        ]
       ),
       child: Center(
         child: Text(

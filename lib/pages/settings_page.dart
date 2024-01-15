@@ -25,9 +25,9 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             Container(
               height: 70,
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.all(Radius.circular(10))
+              decoration: BoxDecoration(
+                color: Provider.of<ThemeProvider>(context).themeData.colorScheme.secondary,
+                borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -49,9 +49,9 @@ class _SettingsPageState extends State<SettingsPage> {
             const Gap(10),
             Container(
               height: 70,
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.all(Radius.circular(10))
+              decoration: BoxDecoration(
+                color: Provider.of<ThemeProvider>(context).themeData.colorScheme.secondary,
+                borderRadius: const BorderRadius.all(Radius.circular(10))
               ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 30),
@@ -60,7 +60,26 @@ class _SettingsPageState extends State<SettingsPage> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text("Semester", style: TextStyle(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary),),
-                    const DropdownButtonExample()
+                    const SemSelectButton()
+                  ],
+                ),
+              ),
+            ),
+            const Gap(10),
+            Container(
+              height: 70,
+              decoration: BoxDecoration(
+                color: Provider.of<ThemeProvider>(context).themeData.colorScheme.secondary,
+                borderRadius: const BorderRadius.all(Radius.circular(10))
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text("Group", style: TextStyle(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary),),
+                    const SemSelectButton()
                   ],
                 ),
               ),

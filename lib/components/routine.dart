@@ -60,7 +60,7 @@ class _RoutineBarState extends State<RoutineBar> {
               child: Container(
                 height: 90.0,
                 width: 150,
-                color: Colors.blue,
+                color: index%2==0?const Color(0xff43766C):const Color(0xff3887BE),
                 // margin: index+1 != routine.length? const EdgeInsets.only(right: 5):const EdgeInsets.all(0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
