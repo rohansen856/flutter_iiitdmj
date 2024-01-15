@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:iiitdmj/database/routine_database.dart';
 import 'package:iiitdmj/database/settings_database.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class RoutineBar extends StatefulWidget {
   const RoutineBar({super.key});
@@ -77,7 +79,7 @@ class _RoutineBarState extends State<RoutineBar> {
       : MaterialButton(
         onPressed: ()=> func(),
         color: Colors.blue, 
-        child: sem!=0? const CircularProgressIndicator(color: Colors.white,): const Text("set the semester in settings"),
+        child: sem!=0? CircularProgressIndicator(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,): const Text("set the semester in settings"),
       )
     );
   }

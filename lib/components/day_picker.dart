@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class DayPicker extends StatefulWidget {
   const DayPicker({super.key});
@@ -30,7 +32,8 @@ class _DayPickerState extends State<DayPicker> {
       child: Center(
         child: Text(
           weekdays[DateTime.now().weekday], 
-          style: const TextStyle(
+          style: TextStyle(
+            color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
             fontSize: 27, 
             fontWeight: 
             FontWeight.bold

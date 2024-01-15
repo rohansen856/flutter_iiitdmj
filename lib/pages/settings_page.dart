@@ -35,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text("Theme"),
+                    Text("Theme", style: TextStyle(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary),),
                     CupertinoSwitch(
                       value: Provider.of<ThemeProvider>(context).isDarkMode,
                       onChanged: (n){
@@ -53,14 +53,14 @@ class _SettingsPageState extends State<SettingsPage> {
                 color: Colors.amber,
                 borderRadius: BorderRadius.all(Radius.circular(10))
               ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 20.0, right: 30),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text("Semester"),
-                    DropdownButtonExample()
+                    Text("Semester", style: TextStyle(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary),),
+                    const DropdownButtonExample()
                   ],
                 ),
               ),

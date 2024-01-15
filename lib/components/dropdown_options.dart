@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iiitdmj/database/settings_database.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 /// Flutter code sample for [DropdownButton].
 
@@ -19,12 +21,15 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
   Widget build(BuildContext context) {
     return DropdownButton<int>(
       value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward, color: Colors.white,),
+      icon: Icon(
+        Icons.arrow_downward, 
+        color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
+      ),
       elevation: 16,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary),
       underline: Container(
         height: 2,
-        color: Colors.white,
+        color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
       ),
       onChanged: (int? value) {
         // This is called when the user selects an item.

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:gap/gap.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:iiitdmj/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:iiitdmj/main.dart';
 
@@ -76,7 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -152,10 +154,10 @@ class _AuthScreenState extends State<AuthScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF9F7BFF),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Sign In',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
                           fontSize: 15,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w500,
