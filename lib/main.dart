@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         theme: Provider.of<ThemeProvider>(context).themeData,
         darkTheme: darkMode,
-        initialRoute: '/',
+        initialRoute: '/home',
         routes: <String, WidgetBuilder>{
           '/': (_) => const SplashPage(),
           '/login': (_) => const AuthScreen(),

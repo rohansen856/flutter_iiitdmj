@@ -15,7 +15,7 @@ class SemSelectButton extends StatefulWidget {
 }
 
 class _SemSelectButtonState extends State<SemSelectButton> {
-  int dropdownValue = SettingsDatabase().getData('sem');
+  int dropdownValue = 1;//SettingsDatabase().getData('sem');
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _SemSelectButtonState extends State<SemSelectButton> {
         // This is called when the user selects an item.
         setState(() {
           dropdownValue = value!;
-          SettingsDatabase().writeData('sem', value);
+          SettingsDatabase().writeData('sem', dropdownValue);
         });
       },
       items: sem.map<DropdownMenuItem<int>>((int value) {
@@ -48,7 +48,7 @@ class _SemSelectButtonState extends State<SemSelectButton> {
   }
 }
 
-const List<int> group = [];
+const List<int> group = [1,2,3,4];
 
 class GroupSelectButton extends StatefulWidget {
   const GroupSelectButton({super.key});
@@ -58,7 +58,7 @@ class GroupSelectButton extends StatefulWidget {
 }
 
 class _GroupSelectButtonState extends State<GroupSelectButton> {
-  int dropdownValue = SettingsDatabase().getData('sem');
+  late int dropdownValue =1;// SettingsDatabase().getData('sem')??1;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _GroupSelectButtonState extends State<GroupSelectButton> {
         // This is called when the user selects an item.
         setState(() {
           dropdownValue = value!;
-          SettingsDatabase().writeData('sem', value);
+          SettingsDatabase().writeData('sem', dropdownValue);
         });
       },
       items: group.map<DropdownMenuItem<int>>((int value) {

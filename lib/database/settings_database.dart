@@ -24,7 +24,6 @@ class SettingsDatabase extends ChangeNotifier{
     else if(name == 'mess'){
       data = mybox.get('settings.mess');
     }
-    print(data);
     return data;
   }
 }

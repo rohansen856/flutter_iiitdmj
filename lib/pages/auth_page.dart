@@ -78,7 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
+      backgroundColor: Provider.of<ThemeProvider>(context).themeData.colorScheme.secondary,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -108,8 +108,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 TextField(
                   controller: _emailController,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Color(0xFF393939),
+                  style: TextStyle(
+                    color: Provider.of<ThemeProvider>(context).themeData.colorScheme.inversePrimary,
                     fontSize: 13,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
